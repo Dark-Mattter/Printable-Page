@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printable Webpage Assignment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header, footer, nav {
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+
+    .print-section {
+      background-color: #e6f7ff;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .print-section, .print-section * {
+        visibility: visible;
+      }
+      .print-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Cool Webpage</h1>
+    <nav>
+      <a href="#">Home</a> |
+      <a href="#">About</a> |
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Welcome to my site!</h2>
+      <p>This is a general section with information for viewers.</p>
+    </section>
+
+    <section class="print-section">
+      <h2>Printable Section</h2>
+      <p>This content is important and should be printed.</p>
+    </section>
+
+    <section>
+      <h2>Other Content</h2>
+      <p>This content is only for screen viewing and will not print.</p>
+    </section>
+
+    <button onclick="window.print()">Print This Page</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
